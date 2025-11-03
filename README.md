@@ -36,10 +36,68 @@ After downloading, place the model file inside the `models` folder.
 
 ---
 
-## 🧩 Future Enhancements
-- Add a CNN model for comparison.  
-- Generate a confusion matrix and accuracy metrics.  
-- Integrate live camera feeds for continuous monitoring.  
+## 📁 Project Structure
+
+```
+📦 Traffic Density Estimation
+├── data/                   # Folder containing datasets (images/videos for training/testing)
+│
+├── output/                 # Stores output files generated after processing
+│   └── processed.mp4       # Example processed video with detected traffic density
+│
+├── src/                    # Source code folder
+│   └── demo.py             # Main Python script to run detection or model inference
+│
+├── venv/                   # Virtual environment folder (contains dependencies)
+│
+├── README.md               # Project documentation (this file)
+├── requirements.txt        # List of all dependencies required to run the project
+├── TODO.md                 # Notes or pending tasks for project development
+│
+├── yolov8n.pt              # YOLOv8-nano model weights (lightweight version)
+└── yolov8s.pt              # YOLOv8-small model weights (more accurate version)
+```
+
+---
+
+## ⚙️ Description
+
+This project focuses on **Traffic Density Estimation** using **YOLOv8 object detection** models.  
+It processes video inputs to detect vehicles and estimate the overall density (e.g., Low, Medium, High).
+
+---
+
+## 🚀 How to Run
+
+1. **Create Virtual Environment**
+   ```bash
+   python -m venv venv
+   source venv/Scripts/activate   # On Windows
+   # or
+   source venv/bin/activate       # On macOS/Linux
+   ```
+
+2. **Install Requirements**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the Demo**
+   ```bash
+   python src/demo.py
+   ```
+
+4. **Check Output**
+   - Processed video will be saved in the `output/` folder as `processed.mp4`.
+
+---
+
+## 🧠 Models Used
+
+| Model File | Description | Use Case |
+|-------------|--------------|-----------|
+| `yolov8n.pt` | Nano version (fast, lightweight) | Real-time inference |
+| `yolov8s.pt` | Small version (more accurate) | Higher precision tasks |
 
 ---
 
